@@ -1,19 +1,21 @@
-%define module pygraphviz
-%define name python-%{module}
-%define version 0.36
-%define release %mkrel 1
+%define module	pygraphviz
+%define name	python-%{module}
+%define version 0.99.1
+%define release	%mkrel 1
 
-Summary: Python interface to Graphviz
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: %{module}-%{version}.tar.lzma
-License: BSD
-Group: Development/Python
-Url: https://networkx.lanl.gov/wiki/pygraphviz
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires: graphviz
-BuildRequires: python-devel, graphviz-devel
+Summary:	Python interface to Graphviz
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Source0:	%{module}-%{version}.tar.lzma
+License:	BSD
+Group:		Development/Python
+Url:		https://networkx.lanl.gov/pygraphviz
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Requires:	graphviz >= 2.0
+Requires:	python >= 2.4
+BuildRequires:	graphviz-devel >= 2.0
+BuildRequires:	python-devel >= 2.4
 
 %description
 PyGraphviz is a Python interface to the Graphviz graph layout and
