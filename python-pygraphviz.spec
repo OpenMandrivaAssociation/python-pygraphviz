@@ -1,7 +1,7 @@
 %define module	pygraphviz
 %define name	python-%{module}
 %define version 0.99.1
-%define release	%mkrel 2
+%define release	%mkrel 3
 
 Summary:	Python interface to Graphviz
 Name:		%{name}
