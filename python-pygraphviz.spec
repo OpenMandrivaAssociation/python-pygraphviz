@@ -31,7 +31,10 @@ algorithms.
 
 %build
 PYTHONDONTWRITEBYTECODE= %__python setup.py build
-%make -C doc html
+pushd doc
+export PYTHONPATH=`dir -d ../build/lib.linux*`
+%make html
+popd
 
 %install
 %__rm -rf %{buildroot}
