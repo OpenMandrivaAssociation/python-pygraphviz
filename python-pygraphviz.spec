@@ -1,20 +1,21 @@
 %define module	pygraphviz
 %define name	python-%{module}
-%define version 0.99.1
-%define release	%mkrel 3
+%define version 1.0
+%define rel	rc5
+%define release	%mkrel 0.%{rel}
 
 Summary:	Python interface to Graphviz
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	%{module}-%{version}.tar.lzma
-Patch0:		pygraphviz-0.99.1-fix-str-fmt.patch
+Source0:	%{module}-%{version}%{rel}.tar.gz
 License:	BSD
 Group:		Development/Python
 Url:		https://networkx.lanl.gov/pygraphviz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	graphviz >= 2.0
 BuildRequires:	graphviz-devel >= 2.0
+BuildRequires:	python-sphinx
 %py_requires -d
 
 %description
@@ -26,15 +27,15 @@ using Python to access the Graphviz graph data structure and layout
 algorithms.
 
 %prep
-%setup -q -n %{module}-%{version}
-%patch0 -p0
+%setup -q -n %{module}-%{version}%{rel}
 
 %build
-%__python setup.py build
+PYTHONDONTWRITEBYTECODE= %__python setup.py build
+%make -C doc html
 
 %install
 %__rm -rf %{buildroot}
-%__python setup.py install --root=%{buildroot}
+PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot}
 
 %__rm -rf %{buildroot}%{_datadir}/doc
 
@@ -43,6 +44,6 @@ algorithms.
 
 %files
 %defattr(-,root,root)
-%doc doc/* examples
+%doc doc/build/html examples
 %python_sitearch/pygraphviz
 %python_sitearch/*.egg-info
