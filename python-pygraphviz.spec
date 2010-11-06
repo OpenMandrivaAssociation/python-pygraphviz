@@ -2,7 +2,7 @@
 %define name	python-%{module}
 %define version 1.0
 %define rel	rc5
-%define release	%mkrel 0.%{rel}
+%define release	%mkrel 0.%{rel}.1
 
 Summary:	Python interface to Graphviz
 Name:		%{name}
@@ -16,7 +16,6 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	graphviz >= 2.0
 BuildRequires:	graphviz-devel >= 2.0
 BuildRequires:	python-sphinx
-%py_requires -d
 
 %description
 PyGraphviz is a Python interface to the Graphviz graph layout and
