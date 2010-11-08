@@ -15,6 +15,7 @@ Url:		https://networkx.lanl.gov/pygraphviz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	graphviz >= 2.0
 BuildRequires:	graphviz-devel >= 2.0
+BuildRequires:	python-devel
 BuildRequires:	python-sphinx
 
 %description
