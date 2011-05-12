@@ -1,7 +1,7 @@
 %define module	pygraphviz
 %define name	python-%{module}
-%define version 1.0
-%define rel	rc6
+%define version 1.1
+%define rel	rc1
 %define release	%mkrel 0.%{rel}.1
 
 Summary:	Python interface to Graphviz
