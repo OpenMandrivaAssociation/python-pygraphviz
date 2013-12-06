@@ -3,7 +3,7 @@
 Summary:	Python interface to Graphviz
 Name:		python-%{module}
 Version:	1.1
-Release:	2
+Release:	3
 Source0:	%{module}-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
