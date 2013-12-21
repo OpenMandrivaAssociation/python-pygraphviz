@@ -2,9 +2,9 @@
 
 Summary:	Python interface to Graphviz
 Name:		python-%{module}
-Version:	1.1
-Release:	3
-Source0:	%{module}-%{version}.tar.gz
+Version:	1.2
+Release:	1
+Source0:	https://pypi.python.org/packages/source/p/pygraphviz/pygraphviz-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
 Url:		https://networkx.lanl.gov/pygraphviz
@@ -83,3 +83,4 @@ sed -i 's/.*examples$//' FILE_LIST
 
 * Mon Jul 7 2008 Lev Givon <lev@mandriva.org> 0.36-1mdv2008.1
 - Package for Mandriva.
+
