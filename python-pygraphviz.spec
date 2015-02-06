@@ -3,7 +3,7 @@
 Summary:	Python interface to Graphviz
 Name:		python-%{module}
 Version:	1.2
-Release:	1
+Release:	2
 Source0:	https://pypi.python.org/packages/source/p/pygraphviz/pygraphviz-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
