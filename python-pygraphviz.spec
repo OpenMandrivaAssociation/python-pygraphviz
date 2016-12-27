@@ -1,17 +1,17 @@
 %define module	pygraphviz
 
 Summary:	Python interface to Graphviz
-Name:		python-%{module}
+Name:		python2-%{module}
 Version:	1.2
-Release:	2
+Release:	3
 Source0:	https://pypi.python.org/packages/source/p/pygraphviz/pygraphviz-%{version}.tar.gz
 License:	BSD
 Group:		Development/Python
 Url:		https://networkx.lanl.gov/pygraphviz
 Requires:	graphviz >= 2.0
 BuildRequires:	graphviz-devel >= 2.0
-BuildRequires:	python-devel
-BuildRequires:	python-sphinx
+BuildRequires:	python2-devel
+BuildRequires:	python2-sphinx
 
 %description
 PyGraphviz is a Python interface to the Graphviz graph layout and
@@ -25,14 +25,14 @@ algorithms.
 %setup -q -n %{module}-%{version}
 
 %build
-PYTHONDONTWRITEBYTECODE= %__python setup.py build
+PYTHONDONTWRITEBYTECODE= %__python2 setup.py build
 pushd doc
 export PYTHONPATH=`dir -d ../build/lib.linux*`
-%make html
+%make html SPHINXBUILD=sphinx-build2
 popd
 
 %install
-PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILE_LIST
+PYTHONDONTWRITEBYTECODE= %__python2 setup.py install --root=%{buildroot} --record=FILE_LIST
 sed -i 's/.*examples$//' FILE_LIST
 
 %files -f FILE_LIST
