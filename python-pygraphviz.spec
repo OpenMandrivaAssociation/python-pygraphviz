@@ -12,6 +12,7 @@ Requires:	graphviz >= 2.0
 BuildRequires:	graphviz-devel >= 2.0
 BuildRequires:	python2-devel
 BuildRequires:	python2-sphinx
+%rename		python-%{module}
 
 %description
 PyGraphviz is a Python interface to the Graphviz graph layout and
