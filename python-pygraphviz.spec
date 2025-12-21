@@ -9,6 +9,7 @@ License:	BSD
 Group:		Development/Python
 Url:		https://networkx.lanl.gov/pygraphviz
 Requires:	graphviz >= 2.0
+BuildRequires:	make
 BuildRequires:	graphviz-devel >= 2.0
 BuildRequires:	python2-devel
 BuildRequires:	python2-sphinx
